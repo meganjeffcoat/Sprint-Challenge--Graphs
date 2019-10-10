@@ -29,6 +29,14 @@ player = Player("Name", world.startingRoom)
 traversalPath = [] # starts empty, need to go to every room
 visited = {}
 
+## need to find the path
+## have player.currentRoom.id = currRoomID
+## iterate through visited and have currRoomID the iteration?
+## visited[currRoomID] = {}
+## have player.currentRoom.getExits() = exits
+## loop for direction of exits
+## def Travel to travel in the direction loop?
+
 # TRAVERSAL TEST
 visited_rooms = set()
 player.currentRoom = world.startingRoom
