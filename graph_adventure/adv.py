@@ -49,32 +49,37 @@ def find_path(previous=None):
     
     exits = player.currentRoom.getExits()
 
-    # go through using the exits for direction
+    # go through using the exits to find direction path
         # if direction is north and the previous is not direction
             # call Travel to go 'n'
             # append 'n' to the traversalPath
             # do same for other directions
             # check oposite direction for each direction?
+            # then travel and append that direction result to the traversalPath?
     for direction in exits:
         if direction == 'n' and previous !=  direction:
             Travel('n')
             traversalPath.append('n')
             find_path('s')
+            traversalPath.append('s')
  
         elif direction == 's' and previous !=  direction:
             Travel('s')
             traversalPath.append('s')
             find_path('n')
+            traversalPath.append('n')
 
         elif direction == 'e' and previous !=  direction:
             Travel('e')
             traversalPath.append('e')
             find_path('w')
+            traversalPath.append('w')
 
         elif direction == 'w' and previous !=  direction:
             Travel('w')
             traversalPath.append('w')
             find_path('e')
+            traversalPath.append('e')
 
 
 def Travel(direction):
