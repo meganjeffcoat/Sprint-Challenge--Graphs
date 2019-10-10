@@ -37,6 +37,23 @@ visited = {}
 ## loop for direction of exits
 ## def Travel to travel in the direction loop?
 
+def find_path(previous=None):
+    currRoomID = player.currentRoom.id
+
+    for i in visited:
+        if i == currRoomID:
+            print(f"Already found: {currRoomID}")
+            return
+    visited[currRoomID] = {}
+    print(f"Adding: {currRoomID}")
+    
+    exits = player.currentRoom.getExits()
+
+    # TODO: make something to travel
+
+def Travel(direction):
+    pass
+
 # TRAVERSAL TEST
 visited_rooms = set()
 player.currentRoom = world.startingRoom
@@ -56,10 +73,10 @@ else:
 #######
 # UNCOMMENT TO WALK AROUND
 #######
-player.currentRoom.printRoomDescription(player)
-while True:
-    cmds = input("-> ").lower().split(" ")
-    if cmds[0] in ["n", "s", "e", "w"]:
-        player.travel(cmds[0], True)
-    else:
-        print("I did not understand that command.")
+# player.currentRoom.printRoomDescription(player)
+# while True:
+#     cmds = input("-> ").lower().split(" ")
+#     if cmds[0] in ["n", "s", "e", "w"]:
+#         player.travel(cmds[0], True)
+#     else:
+#         print("I did not understand that command.")
