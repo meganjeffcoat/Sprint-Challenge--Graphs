@@ -54,22 +54,27 @@ def find_path(previous=None):
             # call Travel to go 'n'
             # append 'n' to the traversalPath
             # do same for other directions
+            # check oposite direction for each direction?
     for direction in exits:
         if direction == 'n' and previous !=  direction:
             Travel('n')
             traversalPath.append('n')
+            find_path('s')
  
         elif direction == 's' and previous !=  direction:
             Travel('s')
             traversalPath.append('s')
+            find_path('n')
 
         elif direction == 'e' and previous !=  direction:
             Travel('e')
             traversalPath.append('e')
+            find_path('w')
 
         elif direction == 'w' and previous !=  direction:
             Travel('w')
             traversalPath.append('w')
+            find_path('e')
 
 
 def Travel(direction):
